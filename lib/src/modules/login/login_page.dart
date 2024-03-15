@@ -13,7 +13,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.appPageBackground,
-      body: SingleChildScrollView,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: ,))
+
+      
     );
   }
 }

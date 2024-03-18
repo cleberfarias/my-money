@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_money/src/shared/colors/app_colors.dart';
-import 'package:my_money/src/shared/colors/components/app_logo_title.dart';
+import 'package:my_money/src/shared/components/app_logo_title.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -47,20 +47,28 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: true,
                   decoration: const InputDecoration(label: Text("Senha")),
                 ),
-                Padding(padding: const EdgeInsets.only(top: 20, bottom: 10,
-                ),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: ElevatedButton(
-                    onPressed: (){},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.green)
-                      elevation: MaterialStateProperty.all(0),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)))),
-                    child: const Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
-                   ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
+                  ),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.green),
+                            elevation: MaterialStateProperty.all(0),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)))),
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        )),
+                  ),
                 )
               ],
             ),

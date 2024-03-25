@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:my_money/src/shared/storage/app_keys.dart';
+import 'package:my_money/src/shared/storage/app_secure_sorage.dart';
 
 mixin AppDio {
   static Future<Dio> getConnection({bool isAuth = false}) async {
@@ -9,10 +11,9 @@ mixin AppDio {
 
     final Map<String, String> headers = <String, String>{};
 
-    String token = "";
-
     if (isAuth) {
-      headers["Autorization"] = "Bearer $token";
+      String? token = await AppSecureStorage.readItem(Appkeys.auth_token);
+      headers["Authorization"] = "Bearer $token";
     }
 
     dio.options = BaseOptions();
@@ -27,6 +28,17 @@ mixin AppDio {
         return true;
       };
     };
+
+    dio.interceptors.add(InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          onRequest(options);
+          handler.next(options);
+        },
+        onResponse: onResponse,
+        onError: (error, handler) async {
+          onError(dio, error, handler);
+        }));
+
     return dio;
   }
 

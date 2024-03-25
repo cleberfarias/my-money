@@ -29,13 +29,13 @@ mixin _$HomeController on _HomeController, Store {
       Atom(name: '_HomeController.expenses', context: context);
 
   @override
-  List<InvalidType> get expenses {
+  List<ExpenseModel> get expenses {
     _$expensesAtom.reportRead();
     return super.expenses;
   }
 
   @override
-  set expenses(List<InvalidType> value) {
+  set expenses(List<ExpenseModel> value) {
     _$expensesAtom.reportWrite(value, super.expenses, () {
       super.expenses = value;
     });

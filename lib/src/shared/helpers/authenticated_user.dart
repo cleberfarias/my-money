@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'package:my_money/src/shared/model/user_model.dart';
+import 'package:my_money/src/shared/model/use_model.dart';
 import 'package:my_money/src/shared/storage/app_keys.dart';
 import 'package:my_money/src/shared/storage/app_secure_sorage.dart';
-import 'package:my_money/src/shared/storage/app_secure_storage.dart';
 
 class AuthenticatedUser {
   static Future<UserModel> getUserData() async {

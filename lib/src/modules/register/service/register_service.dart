@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:my_money/src/modules/register/model/register_data_modal.dart';
-
 import 'package:my_money/src/modules/register/repositories/register_repository.dart';
 
 class RegisterService {

@@ -2,7 +2,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:my_money/src/shared/storage/app_keys.dart';
 
 class AppSecureStorage {
-  static final FlutterSecureStorage storage = FlutterSecureStorage();
+  static const FlutterSecureStorage storage = FlutterSecureStorage();
 
   static Future<void> addItem(Appkeys key, String value) async {
     await storage.write(key: key.toString(), value: value);

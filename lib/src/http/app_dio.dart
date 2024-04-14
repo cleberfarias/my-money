@@ -27,6 +27,7 @@ mixin AppDio {
           (X509Certificate cert, String host, int port) {
         return true;
       };
+      return null;
     };
 
     dio.interceptors.add(InterceptorsWrapper(

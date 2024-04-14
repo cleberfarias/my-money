@@ -27,7 +27,7 @@ class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     redirect(context);
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.initialPageBackground,
       body: SafeArea(
           child: Center(
@@ -35,7 +35,7 @@ class _InitialPageState extends State<InitialPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             AppLogoTitle(title: 'My Money'),
           ],
         ),
